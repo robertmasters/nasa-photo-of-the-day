@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from 'axios'
 import {BASE_URL, API_KEY} from './index'
+import Title from "./components/Title";
+import MainDisplay from "./components/MainDisplay";
 
 function App() {
 
@@ -34,14 +36,11 @@ function App() {
       
         <header>
 
-          <h1>NASA photo of the day!</h1>
-          <h2>{imageObj.title}</h2>
-          <h4>Date: {imageObj.date}</h4>
+        <Title details = {imageObj} />
 
         </header>
-
-        <img src={imageObj.url} alt = 'random space'/>
-        <h3>{imageObj.explanation}</h3>
+        {/* */}
+        <MainDisplay details = {imageObj} />
       
       
       </div>
