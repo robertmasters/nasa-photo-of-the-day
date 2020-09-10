@@ -4,6 +4,13 @@ import axios from 'axios'
 import {BASE_URL, API_KEY} from './index'
 import Title from "./components/Title";
 import MainDisplay from "./components/MainDisplay";
+import styled from 'styled-components';
+
+
+const StyledBody = styled.div`
+  width: 80%;
+  margin: 0 auto;
+`;
 
 function App() {
 
@@ -31,20 +38,17 @@ function App() {
   console.log(imageObj)
 
   return (
-    <body>
+    <StyledBody>
       <div className="App">
       
         <header>
-
-        <Title details = {imageObj} />
-
+        <Title details = {imageObj} />{/* displaying details of the image including the Heading of the page*/}
         </header>
-        {/* */}
-        <MainDisplay details = {imageObj} />
-      
+
+        <MainDisplay details = {imageObj} />{/* displaying photo and description of photo*/}
       
       </div>
-    </body>
+    </StyledBody>
   );
 }
 
